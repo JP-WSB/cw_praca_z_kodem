@@ -14,12 +14,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: pip install pylint 
-      - run: apt install pylint
       - run: pylint app.py
   obrazdoker:
     runs-on: ubuntu-latest 
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: docker bulid --tag test-flask-app
+      - run: docker bulid --tag test-flask-app .
             
