@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask
 
 
 app = Flask(__name__)
@@ -6,22 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', title='Welcome', username='Jakub')
+    return '<h1>Hello WSB! Greetings from Flask & Docker</h1>'
 
-
-@app.route('/index/<name>')
-def hello(name):
-    return render_template('index.html', title='Welcome', username=name)
-
-
-@app.route('/login', methods=['POST', 'GET'])
-def login():
-    if request.method == 'POST':
-        user = request.form['name']
-        return redirect(url_for('hello', name=user))
-    else:
-        user = request.args.get('name')
-        return render_template('login.html')
 
 
 if __name__ == '__main__':
