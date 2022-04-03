@@ -9,10 +9,16 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
   test_pylintem:
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: apt install pylint
+      - run: pip install pylint 
       - run: pylint app.py
+  obrazdoker:
+    runs-on: ubuntu latest 
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: docker bulid --tag test-flask-app
             
