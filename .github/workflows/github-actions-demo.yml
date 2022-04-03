@@ -1,9 +1,13 @@
 name: Pierwsze workflow
 on: push
 jobs:
-	Test-github-actions:
-		runs-on: ubuntu -latest
+    sprawdzenie wersji:
+		runs-on: ubuntu-latest
 		steps:
 			-docker --version
 			-python3 --version
+    test pylintem:
+        runs-on: ubunt-latest
+        steps:
             -pylint app.py
+            
