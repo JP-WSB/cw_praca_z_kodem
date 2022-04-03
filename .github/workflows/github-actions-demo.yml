@@ -1,14 +1,14 @@
 name: Pierwsze workflow
 on: [push]
 jobs:
-  sprawdzenie wersji:
+  sprawdzenie_wersji:
     runs-on: ubuntu-latest
     steps:
       - run: docker --version
       - run: python3 --version
       - name: Check out repository code
         uses: actions/checkout@v3
-  test pylintem:
+  test_pylintem:
     runs-on: ubunt-latest
     steps:
       - name: Check out repository code
