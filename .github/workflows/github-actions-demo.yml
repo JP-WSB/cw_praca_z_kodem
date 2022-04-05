@@ -23,8 +23,9 @@ jobs:
           pip install pylint
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: python -m pylint --fail-under=10 `find -regextype egrep -regex '(.*.py)$'`
-      - run: tee pylint.txt
+      - run: sudo apt install pylint 
+      - run: pylint app.py
+      
   obrazdoker:
     runs-on: ubuntu-latest 
     steps:
