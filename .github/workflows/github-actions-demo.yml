@@ -11,7 +11,6 @@ jobs:
   test_pylintem:
     runs-on: ubuntu-latest
     steps:
-      - name: Pylint action
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: sudo apt install pylint 
